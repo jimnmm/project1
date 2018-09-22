@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>title</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="lightslider.css" />                  
+    <style>
+        body {
+            height: 400vh;
+            display: flex ;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif ,"Microsoft JhengHei"
+        }
+        .wrapper {
+            width: 100%;
+        }
+        .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+        .container {
+            max-width: 540px;
+        }
+        }
+
+        @media (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
+        }
+
+        @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+        }
+        }
+        .container-fluid {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+        }
+        .font a{
+            font-size:1.2rem ;
+            text-decoration: none;
+            display: block ;
+            color:#49af6a;
+            font-weight:bold;
+        }
+        .top {
+            width: 100%;
+            height: 10vh;
+            background: #fff ;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+        .heroPage {
+            width: 100% ;
+            height: 100vh;
+            background: url(images/store.png) ;
+        }
+        .main {
+            width: 100%;
+            height: 100vh;
+            background:#49af6a ;
+        }
+        .product {
+            width: 100%;
+            height: 100vh;
+            background: rgba(255,255,225, .5) ;
+        }
+        .address {
+            width: 100%;
+            height: 80vh;
+            background: url(images/store.png) ;
+        }
+        footer {
+            width: 100%;
+            height: 10vh;
+            background: #005215 ;
+        }
+        /* --------------------------css------------------------- */
+        
+        /* -------------------top---------------------------- */
+        .top .container{
+            justify-content: space-between ;
+        }
+        .top .menu {
+            width: 30%;
+            justify-content: center;
+        }
+        .top .menu ul{
+            width: 100%;
+            justify-content: space-between;
+        }
+        .top .logo img{
+            height: 8vh;
+            object-fit: cover ;
+        }
+        .top .search {
+            width: 30%; 
+        }
+        .top .search ul {
+            justify-content: flex-end;
+        }
+        .top .search ul i {
+            margin:1rem;
+            color:#005215 ;
+            font-size: 1.5rem ;
+        }
+        /* -----------------main--------------------- */
+        .main .container {
+            justify-content: space-between;
+        }
+        .main .slide img {
+            height:55vh ;
+            object-fit: cover;
+            /* transform: translate(3rem,3rem)  */
+        }
+        .main .mainText {
+            width: 40% ;
+            color:#fff;
+            font-weight:500;
+        }
+        .mainText h2 {
+            font-size: 2rem ;
+            line-height: 2.7rem;
+        }
+        .mainText h3 {
+            font-size: 1.2rem;
+            line-height:2rem;
+        }
+        /* -------------------product-------------------- */
+        .product .container {
+            justify-content: space-between;
+        } 
+        .product .productText {
+            width:45% ;
+            font-weight:500;
+            font-size: 1rem;
+            line-height:1.8rem;
+            background: #ccc ;
+            padding: 2rem;
+        }
+        .product .border {
+            padding: 2rem;
+            border: 1px solid #fff;
+        }
+        .product .productText h3 { 
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        .product .slide {
+            width: 30%;
+            background:#ccc;
+        }
+        .product .slide li {
+            flex-direction: column;
+        }
+        .product .slide img {
+            height:40vh ;
+            object-fit: cover;
+        }
+        .item-a { width:200px; }
+        .item-b { width:340px; }
+        .item-c { width:290px; }
+        .item-d { width:220px; }
+        .item-e { width:350px; }
+        @media (max-width: 768px) {
+            .item-a { width:100px; }
+            .item-b { width:240px; }
+            .item-c { width:190px; }
+            .item-d { width:120px; }
+            .item-e { width:250px; }
+        }
+        /* ---------------------address--------------------------- */
+        .address .container {
+            height: 80vh;
+            justify-content: space-between;
+            background: rgba(180, 180, 180, 0.8) ;
+            /* color:#005215; */
+        }
+        .address .map {
+            font-weight:500;
+            font-size: 1rem;
+            line-height:1.8rem;
+            flex-wrap: wrap;
+            width: 40%;
+            text-align:center;
+        }
+        .address .map img {
+            width:30% ;
+            object-fit: cover;
+        }
+        .address .googleMap {
+            width: 50% ;
+            overflow: hidden;
+        }
+        .address .googleMap .box {
+            overflow: hidden;
+            border-radius: 10px; 
+        }
+        .address h2 {
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+        .address h3 {
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        .address .text img {
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper"">
+        <div class="heroPage">
+            <img src="" alt="">
+        </div>
+        <div class="top flex">
+            <div class="container flex">
+                <div class="menu flex">
+                    <ul class="flex font">
+                        <li class="flex"><a href="page_1.html">首頁</a></li>
+                        <li class="flex"><a href="page_3.html">關於</a></li>
+                        <li class="flex"><a href="page_2.html">商品</a></li>
+                        <li class="flex"><a href="page_4.html">懶人誌</a></li>
+                    </ul>
+                </div>
+                <div class="logo"><img src="images/logo.png" alt=""></div>
+                <div class="search">
+                    <ul class="flex">
+                        <li><i class="fas fa-search"></i></li>
+                        <li><textarea name="" id="" cols="15" rows="1"></textarea></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main flex">
+            <div class="container flex">
+                <div class="slide">
+                    <a href="page_3.html"><img src="images/store1.jpg" alt=""></a>
+                </div>
+                <div class="mainText">
+                    <h2>中藥老店 X 有機食品店</h2>
+                    <h3>在這條車水馬龍、塵霾飛揚的路上，懶人樹門前是唯一有行道樹的地方，這棵小葉欖仁隨時光流轉展現出不同的姿態。春三月，新芽吐露；夏三月，枝繁葉茂；秋三月，落葉紛飛；冬三月，落葉歸根。四時景緻，提醒行色匆匆的人們，停下腳步去感受季節的交替，觀照自己的身心。</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product flex">
+            <div class="container flex">
+                <div class="productText">
+                    <div class="border">
+                        <h3>由中藥店轉型為「中藥X有機食品」店，提供更全面的養生資訊及最優質的藥材、食品及日常用品。</h3>
+                        <h3>我們提供更全面的養生資訊，使顧客能理解到日常攝取的食物是如何地影響我們的身體。</h3>
+                    </div>
+                </div>
+                <div class="slide">
+                    <ul id="lightSlider">
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro1.png" alt=""></a> 
+                            <p>喬伊農場奇亞籽</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro2.png" alt=""></a> 
+                            <p>紫蘇籽油</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro3.png" alt=""></a> 
+                            <p>週週現磨黑芝麻醬</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro4.png" alt=""></a> 
+                            <p>Agro農場特級冷壓初榨橄欖油</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro5.png" alt=""></a> 
+                            <p>手工純釀醬油</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro6.png" alt=""></a> 
+                            <p>苦茶油薑泥拌醬</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro7.png" alt=""></a> 
+                            <p>野放茶植物保健牙膏</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro8.png" alt=""></a> 
+                            <p>台灣紅寶紅豆</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro9.png" alt=""></a> 
+                            <p>老薑紅茶</p>
+                        </li>
+                        <li class="item-b flex">
+                            <a href="page_2.html"><img src="images/pro10.png" alt=""></a> 
+                            <p>鴨間稻有機十全珍穀</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>   
+        </div>
+        <div class="address flex">
+            <div class="container flex">
+                <div class="map flex">
+                    <div class="pic">
+                        <img src="images/logo_m.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>懶人樹天然健康の店</h2> 
+                        <h3>地址:台中市潭子區潭興路三段80號</h3>
+                        <h3>電話:0988 248 407</h3>
+                        <a href=""><img src="images/facebook-logo-button.svg" alt=""></a>
+                        <a href=""><img src="images/instagram-logo.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="googleMap flex">
+                    <div class="box">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3638.8575252913724!2d120.70022511499015!3d24.21176898436398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469177acc69faa1%3A0x67433b7bf91fd0c9!2z5oe25Lq65qi55aSp54S25YGl5bq344Gu5bqX!5e0!3m2!1szh-TW!2stw!4v1534839705907" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h4></h4>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="lightslider.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#lightSlider").lightSlider({
+                item:1,
+                auto:true,
+                loop:true,
+                slideMove:2,
+                autoWidth:true,
+                speed:400,
+            }); 
+            
+        });
+    </script>
+</body>
+</html>
