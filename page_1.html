@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
@@ -6,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>title</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="lightslider.css" />                  
+    <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
     <style>
         body {
             height: 400vh;
@@ -67,8 +66,9 @@
             font-size:1.2rem ;
             text-decoration: none;
             display: block ;
-            color:#49af6a;
+            color:#00803e;
             font-weight:bold;
+            padding: .5rem;
         }
         .top {
             width: 100%;
@@ -81,7 +81,8 @@
         .heroPage {
             width: 100% ;
             height: 100vh;
-            background: url(images/store.png) ;
+            background: url(images/top.jpg) no-repeat fixed ;
+            background-size: cover;
         }
         .main {
             width: 100%;
@@ -103,8 +104,7 @@
             height: 10vh;
             background: #005215 ;
         }
-        /* --------------------------css------------------------- */
-        
+     
         /* -------------------top---------------------------- */
         .top .container{
             justify-content: space-between ;
@@ -131,6 +131,57 @@
             margin:1rem;
             color:#005215 ;
             font-size: 1.5rem ;
+        }
+        .top .search textarea {
+            resize: none;
+            height: 1rem;
+        }
+           /* --------------------------css------------------------- */
+        .hvr-sweep-to-right {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        .hvr-sweep-to-right:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #005215;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+            color: #fff;
+        }
+        .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        li .effect {
+            color:#fff;
+            background: #005215;
         }
         /* -----------------main--------------------- */
         .main .container {
@@ -185,17 +236,9 @@
             height:40vh ;
             object-fit: cover;
         }
-        .item-a { width:200px; }
         .item-b { width:340px; }
-        .item-c { width:290px; }
-        .item-d { width:220px; }
-        .item-e { width:350px; }
         @media (max-width: 768px) {
-            .item-a { width:100px; }
             .item-b { width:240px; }
-            .item-c { width:190px; }
-            .item-d { width:120px; }
-            .item-e { width:250px; }
         }
         /* ---------------------address--------------------------- */
         .address .container {
@@ -239,24 +282,22 @@
 </head>
 <body>
     <div class="wrapper"">
-        <div class="heroPage">
-            <img src="" alt="">
-        </div>
+        <div class="heroPage"></div>
         <div class="top flex">
             <div class="container flex">
                 <div class="menu flex">
                     <ul class="flex font">
-                        <li class="flex"><a href="page_1.html">首頁</a></li>
-                        <li class="flex"><a href="page_3.html">關於</a></li>
-                        <li class="flex"><a href="page_2.html">商品</a></li>
-                        <li class="flex"><a href="page_4.html">懶人誌</a></li>
+                        <li class="flex"><a href="page_1.html" class="hvr-sweep-to-right effect">首頁</a></li>
+                        <li class="flex"><a href="page_3.html" class="hvr-sweep-to-right">關於</a></li>
+                        <li class="flex"><a href="page_2.html" class="hvr-sweep-to-right">商品</a></li>
+                        <li class="flex"><a href="page_4.html" class="hvr-sweep-to-right">懶人誌</a></li>
                     </ul>
                 </div>
                 <div class="logo"><img src="images/logo.png" alt=""></div>
                 <div class="search">
                     <ul class="flex">
                         <li><i class="fas fa-search"></i></li>
-                        <li><textarea name="" id="" cols="15" rows="1"></textarea></li>
+                        <li><textarea placeholder="搜索商品文章" id="" cols="15" rows="1"></textarea></li>
                     </ul>
                 </div>
             </div>
@@ -353,7 +394,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="lightslider.js"></script>
+    <script src="js/lightslider.js"></script>
     <script>
         $(document).ready(function() {
             $("#lightSlider").lightSlider({
@@ -364,7 +405,6 @@
                 autoWidth:true,
                 speed:400,
             }); 
-            
         });
     </script>
 </body>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>blog</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <style>
         body {
@@ -65,8 +64,9 @@
             font-size:1.2rem ;
             text-decoration: none;
             display: block ;
-            color:#49af6a;
+            color:#00803e;
             font-weight:bold;
+            padding: .5rem;
         }
         a {
             text-decoration: none;
@@ -78,6 +78,14 @@
             position: sticky;
             top: 0; */
         }
+        .banner {
+            width: 100%;
+            height: 20vh;
+            background:url(images/blog3.jpg) no-repeat center ;
+            background-size:cover ;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
         footer {
             width: 100%;
             height: 10vh;
@@ -85,15 +93,14 @@
             margin-top: 1rem;
         }
         .main {
-            margin-top: 2rem;
-            justify-content: space-between;
-            width: 80vw;
+            padding: 1rem ;
+            width: 100%;
         }
         .post {
-            width: 50vw; 
+            width: 60%; 
         }
         .slide {
-            width: 10vw;
+            width: 15%;
             align-self: flex-start;
         }
         .wrapper {
@@ -126,35 +133,125 @@
             color:#005215 ;
             font-size: 1.5rem ;
         }
+        .top .search textarea {
+            resize: none;
+            height: 1rem;
+        }
+          /* --------------------------css------------------------- */
+          .hvr-sweep-to-right {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        .hvr-sweep-to-right:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #005215;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+            color: #fff;
+        }
+        .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        li .effect {
+            color:#fff;
+            background: #005215;
+        }
+        /* --------------main------------------ */
+        .whiteBg {
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem;
+            flex-wrap:wrap;
+            background: rgba(255,255,225, .5);
+        }
         /* -----------------post------------------- */
         .postHead h2 {
             font-size: 2.5rem;
             color:#49af6a;
-            line-height: 3rem;
+            line-height: 3.2rem;
+        }
+        .postBody p {
+            font-size: 1rem;
+            line-height: 1.7rem;
         }
         .date {
             display: block;
-            margin: .5rem;
+            margin: .5rem 0;
         }
         .postBody {
             line-height: 1.5rem;
         }
         .postBody img {
-            width: 50vw;
+            width: 100%;
             object-fit: cover ;
         }
         .postFooter {
             justify-content: flex-end;
         }
+        .Btn {
+            height: 5vh;
+            justify-content: space-between;
+            color:#005215;
+            cursor: pointer;
+        }
         /* -------------slide----------------------------- */
+        .slide {
+            border-left: 1px solid #005215;
+        }
         .slide ul {
             font-size: 2rem;
-            margin: 1rem;
+            margin: 1rem ;
         }
         .slide ul li {
             font-size:1rem ;
             color: #49af6a;
-            padding: .5rem;
+            padding: .5rem 0;
+        }
+         /* ------------------Btn------------------------- */
+         #sideBtn {
+            width: 3rem;
+            height: 3rem;
+            position: fixed;
+            bottom:5rem;
+            right: 0;
+            background: #005115; 
+            z-index: 5;
+            color:#fff;
+            transition: .8s;
+        }
+        #sideBtn a {
+            padding: 1rem;
+        }
+        #sideBtn:hover {
+            opacity: .6;
         }
     </style>
 </head>
@@ -164,69 +261,98 @@
             <div class="container flex">
                 <div class="menu">
                     <ul class="flex font">
-                        <li class="flex"><a href="page_1.html">首頁</a></li>
-                        <li class="flex"><a href="page_3.html">關於</a></li>
-                        <li class="flex"><a href="page_2.html">商品</a></li>
-                        <li class="flex"><a href="page_4.html">懶人誌</a></li>
+                        <li class="flex"><a href="page_1.html" class="hvr-sweep-to-right">首頁</a></li>
+                        <li class="flex"><a href="page_3.html" class="hvr-sweep-to-right">關於</a></li>
+                        <li class="flex"><a href="page_2.html" class="hvr-sweep-to-right">商品</a></li>
+                        <li class="flex"><a href="page_4.html" class="hvr-sweep-to-right effect">懶人誌</a></li>
                     </ul>
                 </div>
                 <div class="logo"><a href="page_1.html"><img src="images/logo.png" alt=""></a></div>
                 <div class="search">
                     <ul class="flex">
                         <li><i class="fas fa-search"></i></li>
-                        <li><textarea name="" id="" cols="15" rows="1"></textarea></li>
+                        <li><textarea placeholder="搜索商品文章" id="" cols="15" rows="1"></textarea></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="main flex ">
-            <div class="post">
-                <div class="postHead">
-                    <h2 class="blog"><span><a href="">懶人養生術</a></span></h2>
-                    <span class="date">2018年09月10日（一）</span>
-                    <span class="category"></span>
+        <div class="main flex container ">
+            <div class="whiteBg flex">
+                <div class="banner"></div>
+                <div class="post">
+                    <div class="postCard">
+                        <div class="postHead">
+                            <h2 class="blog"><span><a href="">懶人養生術</a></span></h2>
+                            <span class="date">2018年09月10日（一）</span>
+                            <span class="category"></span>
+                        </div>
+                        <div class="postBody">
+                            <p>人人都需要健康，但是大多數人都不健康，為什麼呢？其實基本的養生，大家都懂。然而許多人明知該運動、該注意飲食、該作息正常、該放鬆心情，卻怎麼也做不到。這其實不完全是你們的錯，現代社會步調快、工作壓力大、物質誘惑又多，常常無形中綁架我們的生活習慣。</p>
+                            <p>懶人樹致力於找出輕鬆又簡單的養生方法，例如：懶人運動法、懶人食譜、懶人調理包、養生資訊懶人包等，及各種安全、營養又方便的食物，希望透過這些努力，讓大家都能輕鬆愉快擊敗惡習，找回健康自主權。</p>
+                            <img src="images/blog1.png" alt="">
+                        </div>
+                        <div class="postFooter flex">
+                            <a href=""><img src="images/facebook-logo-button.svg" alt=""></a> 
+                            <a href=""><img src="images/instagram-logo.svg" alt=""></a> 
+                        </div>
+                    </div>
+                    <div class="Btn flex">
+                        <a id="previous">上一篇</a>
+                        <a id="next">下一篇</a>
+                    </div>
                 </div>
-                <div class="postBody">
-                    <p>人人都需要健康，但是大多數人都不健康，為什麼呢？其實基本的養生，大家都懂。然而許多人明知該運動、該注意飲食、該作息正常、該放鬆心情，卻怎麼也做不到。這其實不完全是你們的錯，現代社會步調快、工作壓力大、物質誘惑又多，常常無形中綁架我們的生活習慣。</p>
-                    <p>懶人樹致力於找出輕鬆又簡單的養生方法，例如：懶人運動法、懶人食譜、懶人調理包、養生資訊懶人包等，及各種安全、營養又方便的食物，希望透過這些努力，讓大家都能輕鬆愉快擊敗惡習，找回健康自主權。</p>
-                    <img src="images/blog1.png" alt="">
+                <div class="slide">
+                    <ul>2018
+                        <a href=""><li>1月</li></a>
+                        <a href=""><li>2月</li></a>
+                        <a href=""><li>3月</li></a>
+                        <a href=""><li>4月</li></a>
+                        <a href=""><li>5月</li></a>
+                        <a href=""><li>6月</li></a>
+                        <a href=""><li>7月</li></a>
+                        <a href=""><li>8月</li></a>
+                        <a href=""><li>9月</li></a>
+                    </ul>
+                    <ul>2017
+                        <a href=""><li>1月</li></a>
+                        <a href=""><li>2月</li></a>
+                        <a href=""><li>3月</li></a>
+                        <a href=""><li>4月</li></a>
+                        <a href=""><li>5月</li></a>
+                        <a href=""><li>6月</li></a>
+                        <a href=""><li>7月</li></a>
+                        <a href=""><li>8月</li></a>
+                        <a href=""><li>9月</li></a>
+                        <a href=""><li>10月</li></a>
+                        <a href=""><li>11月</li></a>
+                        <a href=""><li>12月</li></a>
+                    </ul>
                 </div>
-                <div class="postFooter flex">
-                    <a href=""><img src="images/facebook-logo-button.svg" alt=""></a> 
-                    <a href=""><img src="images/instagram-logo.svg" alt=""></a> 
-                </div>
-            </div>
-            <div class="slide">
-                <ul>2018
-                    <a href=""><li>1月</li></a>
-                    <a href=""><li>2月</li></a>
-                    <a href=""><li>3月</li></a>
-                    <a href=""><li>4月</li></a>
-                    <a href=""><li>5月</li></a>
-                    <a href=""><li>6月</li></a>
-                    <a href=""><li>7月</li></a>
-                    <a href=""><li>8月</li></a>
-                    <a href=""><li>9月</li></a>
-                </ul>
-                <ul>2017
-                    <a href=""><li>1月</li></a>
-                    <a href=""><li>2月</li></a>
-                    <a href=""><li>3月</li></a>
-                    <a href=""><li>4月</li></a>
-                    <a href=""><li>5月</li></a>
-                    <a href=""><li>6月</li></a>
-                    <a href=""><li>7月</li></a>
-                    <a href=""><li>8月</li></a>
-                    <a href=""><li>9月</li></a>
-                    <a href=""><li>10月</li></a>
-                    <a href=""><li>11月</li></a>
-                    <a href=""><li>12月</li></a>
-                </ul>
             </div>
         </div>
         <footer>
             <h4></h4>
         </footer>
     </div>
+    <div id="sideBtn"><a class="flex"><i class="fas fa-chevron-up"></i></a></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+            $("#sideBtn").hide();
+        $(window).scroll(function(){
+            let scrollTop = $(this).scrollTop();
+            console.log(scrollTop);
+            if (scrollTop > 150) {
+                $("#sideBtn").fadeIn(800);
+            }
+            else {
+                $("#sideBtn").fadeOut(500);
+            }
+        });
+        $("#sideBtn").click(function(){
+            $("body , html").animate({  
+                scrollTop:0
+            },300);
+        });
+    </script>
 </body>
 </html>
