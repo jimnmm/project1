@@ -24,7 +24,7 @@
         margin-left: auto;
         }
 
-        @media (min-width: 576px) {
+        @media (max-width: 576px) {
         .container {
             max-width: 540px;
         }
@@ -137,8 +137,32 @@
             resize: none;
             height: 1rem;
         }
-          /* --------------------------css------------------------- */
-          .hvr-sweep-to-right {
+        /* ------------top-rwd-------------------------- */
+        @media (max-width: 768px) {
+        .top .menu {
+            width: 40%;
+        }
+        .top .logo {
+            width: 50%;
+        }
+        .top .search {
+            width: 10%;
+        }
+        .top .search textarea {
+            display: none;
+        }
+        .top .search li i {
+            margin: 0;
+            cursor: pointer;
+        }
+        }
+        @media (max-width: 400px) {
+        .top .logo {
+            margin-left: .3rem;
+        }
+        }
+        /* --------------------------css------------------------- */
+        .hvr-sweep-to-right {
             display: inline-block;
             vertical-align: middle;
             -webkit-transform: translateZ(0);
@@ -227,6 +251,14 @@
         .hide {
             display: none;
         }
+        @media (max-width: 768px) {
+        .post {
+            width: 100%;
+        }
+        .Btn {
+            width: 95%;
+        }
+         }
         /* -------------slide----------------------------- */
         .slide {
             border-left: 1px solid #005215;
@@ -241,6 +273,11 @@
             padding: .5rem 0;
             cursor: pointer;
         }
+        @media (max-width: 768px) {
+        .slide {
+            display: none;
+        }
+         }
          /* ------------------Btn------------------------- */
          #sideBtn {
             width: 3rem;
@@ -346,6 +383,7 @@
             },300);
         });
 // --------------append------------------------
+$(function(){
         var postArray = 
     [{
         h2:"懶人養生術",
@@ -373,7 +411,7 @@
     var postCount = postArray.length;
     for (let $i = 0; $i < postCount; $i++) {
         $(".postCard").append(
-		`<div class"main_post ${postArray[$i].category} hide">
+		`<div class="main_post ${postArray[$i].category}">
             <div class="postHead">
                 <h2 class="blog"><span>${postArray[$i].h2}</span></h2>
                 <span class="date">${postArray[$i].date}</span>
@@ -388,7 +426,9 @@
             </div>
         </div>`
     )} ;
+});
     // ---------------filiter---------------------
+    $(".1809").hide();
     $(".listCheck").click(function(){
         let listType = $(this).attr("data-list");
         console.log(listType);

@@ -23,9 +23,10 @@
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
+        box-sizing: border-box;
         }
 
-        @media (min-width: 576px) {
+        @media (max-width: 576px) {
         .container {
             max-width: 540px;
         }
@@ -120,7 +121,31 @@
             resize: none;
             height: 1rem;
         }
-          /* --------------------------css------------------------- */
+     /* ------------top-rwd-------------------------- */
+     @media (max-width: 768px) {
+        .top .menu {
+            width: 40%;
+        }
+        .top .logo {
+            width: 50%;
+        }
+        .top .search {
+            width: 10%;
+        }
+        .top .search textarea {
+            display: none;
+        }
+        .top .search li i {
+            margin: 0;
+            cursor: pointer;
+        }
+        }
+        @media (max-width: 400px) {
+        .top .logo {
+            margin-left: .3rem;
+        }
+        }
+        /* --------------------------css------------------------- */
           .hvr-sweep-to-right {
             display: inline-block;
             vertical-align: middle;
@@ -201,15 +226,19 @@
             line-height: 2rem;
         }
         .pic {
-            width: 85%;
+            width:480px;
         }
         .pic img {
             width: 100%;
             object-fit: cover;
         }
         .item-b { width:480px; }
+        /* -------------------main-rwd--------------------------- */
         @media (max-width: 768px) {
-            .item-b { width:240px; }
+        .item-b { width:360px; }
+        .pic {
+            width:360px;
+        }
         }
          /* ------------------Btn------------------------- */
          #sideBtn {
@@ -300,7 +329,7 @@
     <script>
         $(document).ready(function() {
             $("#lightSlider").lightSlider({
-                item:2,
+                item:1,
                 auto:true,
                 loop:true,
                 slideMove:2,
