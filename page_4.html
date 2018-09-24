@@ -411,7 +411,7 @@ $(function(){
     var postCount = postArray.length;
     for (let $i = 0; $i < postCount; $i++) {
         $(".postCard").append(
-		`<div class="main_post ${postArray[$i].category}">
+		`<div class="main_post ${postArray[$i].category}" data-n="${[$i]}">
             <div class="postHead">
                 <h2 class="blog"><span>${postArray[$i].h2}</span></h2>
                 <span class="date">${postArray[$i].date}</span>
@@ -428,7 +428,10 @@ $(function(){
     )} ;
 });
     // ---------------filiter---------------------
-    $(".1809").hide();
+    $(function(){
+        $(".main_post:first-of-type").fadeIn().siblings().hide();
+    });
+    
     $(".listCheck").click(function(){
         let listType = $(this).attr("data-list");
         console.log(listType);
@@ -438,10 +441,14 @@ $(function(){
             $(".main_post").fadeIn(500);
         }
     });
+$(function(){
     $("#previous").click(function(){
-
+        $(`.main_post:visible`).next().fadeIn().siblings().hide();
     });
-
+    $("#next").click(function(){
+        $(`.main_post:visible`).prev().fadeIn().siblings().hide();
+    });
+});
     </script>
 </body>
 </html>
