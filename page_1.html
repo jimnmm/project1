@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
+    <link rel="stylesheet" href="css/animate.css">
     <style>
         body {
             /* height: 400vh; */
@@ -380,6 +381,43 @@
             width: 350px;
         }
         }
+        /* -------------animate--------------------------- */
+        .wp1 {
+            opacity: 0;
+        }
+        .wp1.animated {
+            opacity: 1;
+        }
+        .wp2 {
+            opacity: 0;
+        }
+        .wp2.animated {
+            opacity: 1;
+        }
+        .wp3 {
+            opacity: 0;
+        }
+        .wp3.animated {
+            opacity: 1;
+        }
+        .wa1 {
+            opacity: 0;
+        }
+        .wa1.animated {
+            opacity: 1;
+        }
+        .wa2 {
+            opacity: 0;
+        }
+        .wa2.animated {
+            opacity: 1;
+        }
+        .wa3 {
+            opacity: 0;
+        }
+        .wa3.animated {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -406,10 +444,10 @@
         </div>
         <div class="main flex">
             <div class="container flex">
-                <div class="slide">
+                <div class="slide wp1">
                     <a href="page_3.html"><img src="images/store1.jpg" alt=""></a>
                 </div>
-                <div class="mainText">
+                <div class="mainText wa1">
                     <h2>中藥老店 X 有機食品店</h2>
                     <h3>在這條車水馬龍、塵霾飛揚的路上，懶人樹門前是唯一有行道樹的地方，這棵小葉欖仁隨時光流轉展現出不同的姿態。春三月，新芽吐露；夏三月，枝繁葉茂；秋三月，落葉紛飛；冬三月，落葉歸根。四時景緻，提醒行色匆匆的人們，停下腳步去感受季節的交替，觀照自己的身心。</h3>
                 </div>
@@ -417,13 +455,13 @@
         </div>
         <div class="product flex">
             <div class="container flex">
-                <div class="productText">
+                <div class="productText wa2">
                     <div class="border">
                         <h3>由中藥店轉型為「中藥X有機食品」店，提供更全面的養生資訊及最優質的藥材、食品及日常用品。</h3>
                         <h3>我們提供更全面的養生資訊，使顧客能理解到日常攝取的食物是如何地影響我們的身體。</h3>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide wp2">
                     <ul id="lightSlider">
                         <li class="item-b flex">
                             <a href="page_2.html"><img src="images/pro1.png" alt=""></a> 
@@ -471,7 +509,7 @@
         </div>
         <div class="address flex">
             <div class="container flex">
-                <div class="map flex">
+                <div class="map flex wp3">
                     <div class="pic">
                         <img src="images/logo_m.png" alt="">
                     </div>
@@ -483,7 +521,7 @@
                         <a href=""><img src="images/instagram-logo.svg" alt=""></a>
                     </div>
                 </div>
-                <div class="googleMap flex">
+                <div class="googleMap flex wa3">
                     <div class="box">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3638.8575252913724!2d120.70022511499015!3d24.21176898436398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469177acc69faa1%3A0x67433b7bf91fd0c9!2z5oe25Lq65qi55aSp54S25YGl5bq344Gu5bqX!5e0!3m2!1szh-TW!2stw!4v1534839705907" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
@@ -496,6 +534,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="js/lightslider.js"></script>
     <script>
         $(document).ready(function() {
@@ -507,6 +546,24 @@
                 autoWidth:true,
                 speed:400,
             }); 
+            for (let i=1 ; i<4 ; i++) {
+                // $(`.wp${i}`).css("opacity","0");
+                // $(`.wp${i}.animated`).css("opacity","1");
+
+                $(`.wp${i}`).waypoint(function() {
+                    $(`.wp${i}`).addClass("animated zoomIn");
+                },
+                {
+                    offset: "60%"
+                });
+                $(`.wa${i}`).waypoint(function() {
+                    $(`.wa${i}`).addClass("animated fadeInUp");
+                },
+                {
+                    offset: "60%"
+                });
+            }
+
         });
     </script>
 </body>
