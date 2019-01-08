@@ -1,0 +1,168 @@
+
+        a {
+            text-decoration: none;
+        }
+       
+        .banner {
+            width: 100%;
+            height: 20vh;
+            background:url(../images/blog3.jpg) no-repeat center ;
+            background-size:cover ;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        .main {
+            padding: 1rem ;
+            width: 100%;
+        }
+        .post {
+            width: 60%; 
+        }
+        .slide {
+            width: 15%;
+            align-self: flex-start;
+        }
+        .wrapper {
+            flex-wrap: wrap;
+        }
+        /* ------------top-rwd-------------------------- */
+        @media (max-width: 400px) {
+        .top .logo {
+            margin-left: .3rem;
+        }
+        }
+        /* --------------------------css------------------------- */
+        .hvr-sweep-to-right {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        .hvr-sweep-to-right:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #005215;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+            color: #fff;
+        }
+        .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        li .effect {
+            color:#fff;
+            background: #005215;
+        }
+        /* --------------main------------------ */
+        .whiteBg {
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem;
+            flex-wrap:wrap;
+            background: rgba(255,255,225, .5);
+        }
+        /* -----------------post------------------- */
+        .postHead h2 {
+            font-size: 2.5rem;
+            color:#00803e;
+            line-height: 3.2rem;
+        }
+        .postBody p {
+            font-size: 1rem;
+            line-height: 1.7rem;
+        }
+        .date {
+            display: block;
+            margin: .5rem 0;
+        }
+        .postBody {
+            line-height: 1.5rem;
+        }
+        .postBody img {
+            width: 100%;
+            object-fit: cover ;
+        }
+        .postFooter {
+            justify-content: flex-end;
+            margin-bottom: 2rem;
+        }
+        .Btn {
+            width: 60%;
+            height: 5vh;
+            justify-content: space-between;
+            color:#005215;
+            cursor: pointer;
+        }
+        .hide {
+            display: none;
+        }
+        @media (max-width: 768px) {
+        .post {
+            width: 100%;
+        }
+        .Btn {
+            width: 95%;
+        }
+         }
+        /* -------------slide----------------------------- */
+        .slide {
+            border-left: 1px solid #005215;
+        }
+        .slide ul {
+            font-size: 2rem;
+            margin: 1rem ;
+        }
+        .slide ul li {
+            font-size:1rem ;
+            color: #49af6a;
+            padding: .5rem 0;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+        .slide {
+            display: none;
+        }
+         }
+         /* ------------------Btn------------------------- */
+         #sideBtn {
+            width: 3rem;
+            height: 3rem;
+            position: fixed;
+            bottom:5rem;
+            right: 0;
+            background: #005115; 
+            z-index: 5;
+            color:#fff;
+            transition: .8s;
+        }
+        #sideBtn a {
+            padding: 1rem;
+        }
+        #sideBtn:hover {
+            opacity: .6;
+        }
